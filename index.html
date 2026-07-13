@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MYCompany</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>hello abhishek</h1>
+    <div class="loginPage">
+        <h2>JobKareGa (Login)</h2>
+        <div>
+            <label>User ID</label>
+            <input id="UserID" type="text" placeholder="Enter User ID">
+        </div>
+        <div>
+            <label>Password</label>
+            <input id="passworddata" type="password" placeholder="Enter Password">
+        </div>
+        <button onclick="loginpage()">Log In</button>
+        <span>
+            User ID और Password के लिए Admin से संपर्क करें.
+            <br><br>
+            <button id="admin">Contact Admin</button>
+        </span>
+    </div>
+    <div id="loading" class="loading">Please wait ...</div>
 </body>
+<script src="index.js"></script>
+
 </html>
