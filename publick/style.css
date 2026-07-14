@@ -1,0 +1,40 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.navDiv {
+    width: 100%;
+    height: 50px;
+    background-color: red;
+    border: 1px solid black;
+    padding: 0;
+    margin: 0;
+}
+
+.sildebaar {
+    width: 30%;
+    height: 100vh;
+    border: 1px solid black;
+    background-image: linear-gradient(rgb(21, 182, 21), white, red);
+    z-index: 1;
+    position: relative;
+    top: 0;
+    transition: width 0.4s;
+}
+
+.footerDiv {
+    width: 100%;
+    height: 250px;
+    background-color: black;
+    border: 1px solid black;
+    position: absolute;
+    bottom: 0;   
+}
+.claosespan{
+    position: absolute;
+    right: 0;
+    margin: 5px;
+    
+}
