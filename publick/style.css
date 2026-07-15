@@ -9,7 +9,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #1a1a2e; /* Modern Dark Theme */
+    background-color: #1a1a2e;
+    /* Modern Dark Theme */
     padding: 15px 30px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -34,12 +35,13 @@
 /* Base Link Styling */
 .navDiv ul li a {
     text-decoration: none;
-    color: #b5b5c3; 
+    color: #b5b5c3;
     font-size: 16px;
     font-weight: 500;
     padding: 8px 16px;
     border-radius: 6px;
-    transition: all 0.3s ease; /* Smooth hover transition */
+    transition: all 0.3s ease;
+    /* Smooth hover transition */
     position: relative;
 }
 
@@ -51,16 +53,18 @@
 
 /* 2. Active State Effect (Current Page) */
 .navDiv ul li a.active {
-    color: #4e9f3d; /* Beautiful Electric Green */
+    color: #4e9f3d;
+    /* Beautiful Electric Green */
     background-color: rgba(78, 159, 61, 0.15);
     font-weight: 600;
 }
 
 /* Special styling just for the Logout button to make it stand out */
-.navDiv ul li a[href*="logout"], 
-.navDiv ul li a:contains("Logout") { 
+.navDiv ul li a[href*="logout"],
+.navDiv ul li a:contains("Logout") {
     color: #ff4d4d;
 }
+
 .navDiv ul li a[href*="logout"]:hover {
     background-color: rgba(255, 77, 77, 0.15);
     color: #ff4d4d;
@@ -71,7 +75,8 @@
     color: #ffffff;
     font-size: 26px;
     cursor: pointer;
-    display: none; /* Hidden on desktop */
+    display: none;
+    /* Hidden on desktop */
     transition: transform 0.2s;
 }
 
@@ -82,8 +87,10 @@
 /* Quick Mobile View Layout Reset */
 @media (max-width: 768px) {
     .navDiv ul {
-        display: none; /* Toggle this via JavaScript using your #menubtn */
+        display: none;
+        /* Toggle this via JavaScript using your #menubtn */
     }
+
     .menubtn {
         display: block;
     }
@@ -228,31 +235,38 @@
     align-items: center;
     border-radius: 10px;
 }
-.wallet div:nth-child(1){
-    background-image: linear-gradient(green,white,green);
-    font-weight: 600;    
+
+.wallet div:nth-child(1) {
+    background-image: linear-gradient(green, white, green);
+    font-weight: 600;
 }
-.wallet div:nth-child(2){
-    background-image: linear-gradient(rgb(241, 89, 78),white,rgb(194, 20, 8));
-    font-weight: 600;    
+
+.wallet div:nth-child(2) {
+    background-image: linear-gradient(rgb(241, 89, 78), white, rgb(194, 20, 8));
+    font-weight: 600;
 }
-.wallet div:nth-child(3){
-    background-image: linear-gradient(rgb(76, 17, 214),white,rgb(22, 55, 243));
-    font-weight: 600;    
+
+.wallet div:nth-child(3) {
+    background-image: linear-gradient(rgb(76, 17, 214), white, rgb(22, 55, 243));
+    font-weight: 600;
 }
-.wallet div:nth-child(4){
-    background-image: linear-gradient(rgb(221, 245, 5),white,rgb(250, 247, 48));
-    font-weight: 600;    
+
+.wallet div:nth-child(4) {
+    background-image: linear-gradient(rgb(221, 245, 5), white, rgb(250, 247, 48));
+    font-weight: 600;
 }
-.wallet div:nth-child(5){
-    background-image: linear-gradient(rgb(248, 6, 228),white,rgb(221, 31, 94));
-    font-weight: 600;    
+
+.wallet div:nth-child(5) {
+    background-image: linear-gradient(rgb(248, 6, 228), white, rgb(221, 31, 94));
+    font-weight: 600;
 }
-.textview{
+
+.textview {
     width: 100%;
     text-align: center;
     display: inline
 }
+
 .historydiv {
     width: 100%;
     height: 500px;
@@ -278,11 +292,171 @@ th {
     margin: 5px;
 
 }
-.footer{
-    width: 100%;
-    height: 200px;
-    background-color: black;
-    
+
+/* Base Footer Styles */
+.footer {
+    background-color: #111122;
+    /* Matches your navigation dark theme */
+    color: #ffffff;
+    padding: 60px 20px 20px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    /* Custom width for sections */
+    gap: 40px;
+}
+
+.footer-section h3 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    position: relative;
+}
+
+/* Line decoration underneath column headers */
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 35px;
+    height: 3px;
+    background-color: #4e9f3d;
+    /* Accent green color */
+    border-radius: 2px;
+}
+
+.footer-section p {
+    color: #a0a0b5;
+    line-height: 1.6;
+    font-size: 15px;
+    margin: 0;
+}
+
+/* Quick Links Custom List */
+.footer-section.links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section.links ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section.links ul li a {
+    color: #a0a0b5;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+.footer-section.links ul li a:hover {
+    color: #4e9f3d;
+    padding-left: 6px;
+    /* Tiny slide-in animation on hover */
+}
+
+/* Social Icons Container & Styles */
+.social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.social-icons .icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #a0a0b5;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+/* Custom individual branding brand colors on hover */
+.social-icons .icon.facebook:hover {
+    background-color: #1877f2;
+    color: white;
+}
+
+.social-icons .icon.whatsapp:hover {
+    background-color: #25d366;
+    color: white;
+}
+
+.social-icons .icon.youtube:hover {
+    background-color: #ff0000;
+    color: white;
+}
+
+.social-icons .icon.instagram:hover {
+    background-color: #e1306c;
+    color: white;
+}
+
+.social-icons .icon.telegram:hover {
+    background-color: #0088cc;
+    color: white;
+}
+
+.social-icons .icon.twitter:hover {
+    background-color: #000000;
+    color: white;
+}
+
+.social-icons .icon:hover {
+    transform: translateY(-5px);
+    /* Gentle liftoff movement */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Bottom Bar styling */
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-bottom p {
+    color: #6e6e80;
+    font-size: 14px;
+}
+
+/* 3. Responsive Screen Handling */
+@media (max-width: 992px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        /* Adjusts layout for smaller laptops/tablets */
+    }
+
+    .footer-section.about {
+        grid-column: span 2;
+        /* Spans across entire row width */
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        /* Stacks vertically completely on standard phones */
+        gap: 30px;
+    }
+
+    .footer-section.about {
+        grid-column: span 1;
+    }
 }
 
 /* for mobile view */
