@@ -65,6 +65,7 @@ function pointsystem(b) {
     document.getElementById("ap").innerHTML = `<span>Today</span><span>${b[3]}</span>`
 }
 
+
 var history1s = document.getElementById("history1Div");
 
 fetch(`https://opensheet.elk.sh/${sheet}/${sheetTable[2]}`)
@@ -74,31 +75,46 @@ fetch(`https://opensheet.elk.sh/${sheet}/${sheetTable[2]}`)
         let userHistory = [];
 
         for (let i = 0; i < data.length; i++) {
-            // String ko Object me convert karo
-            let obj = JSON.parse(data[i][sheetWallet]);
-            userHistory.push(obj);
+            let rawData = data[i][sheetWallet];            
+            // 1. Check karo ki cell empty ya undefined toh nahi hai
+            if (rawData && rawData.trim() !== "") {
+                try {
+                    // String ko Object me convert karo
+                    let obj = JSON.parse(rawData);
+                    userHistory.push(obj);
+                } catch (e) {
+                    console.error("Invalid JSON format at row " + i, e);
+                }
+            }
         }
-        // 1. Pehle table ko khali karo taaki purana data clean ho jaye
+
+        // Table ko khali karo taaki purana data clean ho jaye
         history1s.innerHTML = "";
 
         userHistory.forEach((u, k) => {
-            // 2. '+=' use karo taaki har row pichli row ke BAAD add ho (Append)
+            // 2. Agar koi property empty/missing hai toh "-" dikhao (Nullish Coalescing)
+            let date = u.date || "-";
+            let summary = u.summary || "-";
+            let amount = u.amount !== undefined ? u.amount : "-";
+            let total = u.total !== undefined ? u.total : "-";
+
+            // Row append karo
             history1s.innerHTML += `<tr>
                         <td>${k + 1}</td> 
-                        <td>${u.date}</td>
-                        <td>${u.summary}</td>
-                        <td>${u.amount}</td>
-                        <td>${u.total}</td>
+                        <td>${date}</td>
+                        <td>${summary}</td>
+                        <td>${amount}</td>
+                        <td>${total}</td>
                     </tr>`;
         });
 
     })
     .catch(err => console.log(err));
 
-    document.getElementById("logout").addEventListener("click", () => {
+document.getElementById("logout").addEventListener("click", () => {
     // Best practice: Delete the key completely instead of setting it to ""
     localStorage.removeItem("userID");
-    
+
     // Fix: Use '=' to redirect instead of '( ... )'
     window.location.href = "../index.html";
 });
