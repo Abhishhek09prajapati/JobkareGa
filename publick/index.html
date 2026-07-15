@@ -1,27 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=he, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
+
 <body>
     <!-- <h1 id="k"></h1> -->
-     <nav class="navDiv">
+    <nav class="navDiv">
+        <h1>MyCompany</h1>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Home</a></li>
+            <li><a href="">Home</a></li>
+            <li><a href="">Home</a></li>
+            <li><a href="">Home</a></li>
+            <li><a href="">Home</a></li>
+        </ul>
+        <span id="menubtn" class="menubtn">&#9776;</span>
+    </nav>
 
-     </nav>
+    <section class="mainDiv">
+        <div class="main1Div">
+            <div class="maindivrow1">
+                <img width="100px" src="../images/abh.jpg" alt="">
+                <label id="un" for=""></label>
+                <label id="upost" for=""></label>
+            </div>
+            <div class="maindivrow1">
+                <h4>More Information</h4>
+                <label id="useraddress" for=""></label>
+                <label for="">Joinig Date : <strong>11/15/15</strong></label>
+                <label for="">Joinig Date : <strong>11/15/15</strong></label>
+                <label for="">Joinig Date : <strong>11/15/15</strong></label>
+            </div>
+        </div>
+        <div class="wallet">
+            <div id="tw"></div>
+            <div id="tp"></div>
+            <div id="yp"></div>
+            <div id="mp"></div>
+            <div id="ap"></div>
+        </div>
+        <div class="historydiv">
+            <h1>History</h1>
+            <div style="height: 400px;background-color: pink;overflow-y: scroll;">
+                <table >
+                    <thead style="background-color: grey;">
+                        <tr>
+                            <th>Serial No.</th>
+                            <th>Date</th>
+                            <th>sammary</th>
+                            <th>amount</th>
+                            <th>Total Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody id="history1Div"> </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
 
-<button id="callBtn">click me</button>
-
-     <section class="sildebaar" id="sildebaar">
-        <span id="claosespan" class="claosespan">X</span>
-     </section>
 
 
 
 
-     <footer class="footerDiv"></footer>
+    <!-- sildebar  -->
+
+    <section class="sidebar" id="sildebaar">
+        <span id="claosespan" class="close-btn">&times;</span>
+
+        <div class="sidebar-content">
+            <ul>
+                <li><a href="#">🏠 Home</a></li>
+                <li><a href="#">🛠 Services</a></li>
+                <li><a href="#">🌐 Website</a></li>
+                <li><a href="#">📋 Tasks</a></li>
+                <li><a href="#">📞 Contact Us</a></li>
+                <li><a href="#">ℹ️ About Us</a></li>
+                <li><a href="#">💬 WhatsApp</a></li>
+                <li><a href="#">⭐ Feedback</a></li>
+                <li><a href="#">🔒 Privacy Policy</a></li>
+                <li><a id="logout" href="#">📝 Log Out</a></li>
+            </ul>
+        </div>
+    </section>
+
+
+
+
+    <!-- <footer class="footer"></footer> -->
 </body>
 <script src="index.js"></script>
+
+
 </html>
