@@ -126,7 +126,6 @@
 
 .main1Div div {
     width: 50%;
-
     border: 1px dotted grey;
 }
 
@@ -163,8 +162,26 @@
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-
-
+}
+.wallet div:nth-child(1){
+    background-image: linear-gradient(green,white,green);
+    font-weight: 600;    
+}
+.wallet div:nth-child(2){
+    background-image: linear-gradient(rgb(241, 89, 78),white,rgb(194, 20, 8));
+    font-weight: 600;    
+}
+.wallet div:nth-child(3){
+    background-image: linear-gradient(rgb(76, 17, 214),white,rgb(22, 55, 243));
+    font-weight: 600;    
+}
+.wallet div:nth-child(4){
+    background-image: linear-gradient(rgb(221, 245, 5),white,rgb(250, 247, 48));
+    font-weight: 600;    
+}
+.wallet div:nth-child(5){
+    background-image: linear-gradient(rgb(248, 6, 228),white,rgb(221, 31, 94));
+    font-weight: 600;    
 }
 
 .historydiv {
@@ -186,24 +203,18 @@ th {
     border: 1px solid black;
 }
 
-
-
-
-.footer{
-    width: 500px;
-    height: 300px;
-    background-color: red;
-   
-
-}
-
 .claosespan {
     position: absolute;
     right: 0;
     margin: 5px;
 
 }
-
+.footer{
+    width: 100%;
+    height: 200px;
+    background-color: black;
+    
+}
 
 /* for mobile view */
 @media screen and (max-width:667px) {

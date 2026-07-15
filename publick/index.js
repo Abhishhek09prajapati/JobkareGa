@@ -59,10 +59,10 @@ function userdatavalue(a) {
 }
 function pointsystem(b) {
     document.getElementById("tw").innerHTML = `<span>Your Wallet</span><span>${b[4]}</span>`
-    document.getElementById("tp").innerHTML = `<span>Today</span><span>${b[0]}</span>`
-    document.getElementById("yp").innerHTML = `<span>Today</span><span>${b[1]}</span>`
-    document.getElementById("mp").innerHTML = `<span>Today</span><span>${b[2]}</span>`
-    document.getElementById("ap").innerHTML = `<span>Today</span><span>${b[3]}</span>`
+    document.getElementById("tp").innerHTML = `<span>Today Points</span><span>${b[0]}</span>`
+    document.getElementById("yp").innerHTML = `<span>Yesterday Points</span><span>${b[1]}</span>`
+    document.getElementById("mp").innerHTML = `<span>Monthly Points</span><span>${b[2]}</span>`
+    document.getElementById("ap").innerHTML = `<span>Total Points</span><span>${b[3]}</span>`
 }
 
 
