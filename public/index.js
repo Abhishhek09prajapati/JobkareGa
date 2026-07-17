@@ -124,8 +124,3 @@ document.getElementById("logout1").addEventListener("click", () => {
     window.location.href = "../index.html";
 });
 
-document.getElementById("result34").innerHTML = localStorage.getItem("userID")
-
-if(!localStorage.getItem("userID")){
-    window.location.href = "../index.html";
-}
