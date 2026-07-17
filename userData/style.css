@@ -6,6 +6,7 @@
 
 body {
     background-color: green;
+    width: 100%;
 }
 
 .userdata {
@@ -19,7 +20,7 @@ body {
 .userDiv {
     width: 100%;
     border: 1px solid black;
-    margin: 2px 0px;
+    margin: 10px 0px;
     text-align: center;
     height: max-content;
     display: flex;
@@ -29,4 +30,11 @@ body {
 
 .userDiv label {
     font-size: large;
+}
+
+@media screen and (max-width:567px) {
+    .userdata {
+        width: 100%;
+
+    }
 }
