@@ -125,3 +125,7 @@ document.getElementById("logout1").addEventListener("click", () => {
 });
 
 document.getElementById("result34").innerHTML = localStorage.getItem("userID")
+
+if(!localStorage.getItem("userID")){
+    window.location.href = "../index.html";
+}
