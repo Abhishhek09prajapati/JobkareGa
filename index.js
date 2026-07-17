@@ -54,3 +54,9 @@ document.getElementById("admin").addEventListener('click', () => {
     var a = "Mujhe UserID and PassWord Chahiye"
     window.open(`https://wa.me/916387215755?text=${a}`)
 })
+
+var a = localStorage.getItem("userID")
+
+if(a){
+    window.location.href = "publick/index.html";
+}
