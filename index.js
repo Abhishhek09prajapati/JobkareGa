@@ -37,7 +37,7 @@ async function getData() {
         if (password.value.trim() === user.password) {
             localStorage.setItem("userID", userid.value)
             // Redirect
-            window.location.href = "public/index.html";
+            window.location.href = "publick/index.html";
         } else {
             loading.style.display = "none";
             alert("Wrong Password");
