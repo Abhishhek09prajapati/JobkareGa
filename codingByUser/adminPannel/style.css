@@ -1,0 +1,138 @@
+/* Reset basic styles and apply the new font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f4f7fb; /* Light grayish-blue background */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* The main layout wrapper */
+.admin-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+}
+
+/* The white card holding the form */
+.form-card {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* Soft, modern shadow */
+    border: 1px solid #eef0f5;
+}
+
+/* Typography styling */
+.form-card h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #718096;
+    margin-bottom: 30px;
+}
+
+/* Grouping labels and inputs together */
+.input-group {
+    margin-bottom: 20px;
+    position: relative; /* Needed for the dropdown positioning */
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #4a5568;
+}
+
+/* Input field styling */
+.input-group input {
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #fafbfc;
+}
+
+/* When the user clicks into the input field */
+.input-group input:focus {
+    border-color: #3182ce;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.15);
+}
+
+/* Remove default arrows from number inputs (Chrome/Safari) */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+/* The Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #3182ce; /* Trustworthy blue */
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #2b6cb0;
+}
+
+.submit-btn:active {
+    transform: scale(0.98); /* Slight click effect */
+}
+
+.numberList-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+}
+
+.numberList-item:hover {
+    background-color: #ebf8ff;
+    color: #3182ce;
+}
+.numberList{
+    width: 300px;
+    height: 200px;
+    position: relative;
+    top: 0;
+    border: 1px solid black;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    padding: 3px 10px;
+    gap: 5px;
+}
+.divnumber{
+    background-color: white;
+    padding: 0px 8px;
+    border-radius: 5px;
+}
