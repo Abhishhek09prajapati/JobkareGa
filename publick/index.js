@@ -114,7 +114,12 @@ fetch(`https://opensheet.elk.sh/${sheet}/${sheetTable[2]}`)
 document.getElementById("logout").addEventListener("click", () => {
     // Best practice: Delete the key completely instead of setting it to ""
     localStorage.removeItem("userID");
-
+    // Fix: Use '=' to redirect instead of '( ... )'
+    window.location.href = "../index.html";
+});
+document.getElementById("logout1").addEventListener("click", () => {
+    // Best practice: Delete the key completely instead of setting it to ""
+    localStorage.removeItem("userID");
     // Fix: Use '=' to redirect instead of '( ... )'
     window.location.href = "../index.html";
 });
