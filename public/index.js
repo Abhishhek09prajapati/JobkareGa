@@ -123,3 +123,5 @@ document.getElementById("logout1").addEventListener("click", () => {
     // Fix: Use '=' to redirect instead of '( ... )'
     window.location.href = "../index.html";
 });
+
+document.getElementById("result34").innerHTML = localStorage.getItem("userID")
