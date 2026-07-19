@@ -7,71 +7,89 @@ document.getElementsByClassName("close-btn")[0].addEventListener("click", () => 
     document.getElementById("addentery").style.display = "none"
 })
 
+var customerList = document.getElementById("customerList")
+
+const searchInput = document.getElementById("serachdata");
+
+searchInput.addEventListener("input", (e) => {
 
 
 
+    fetch(`https://opensheet.elk.sh/${sh}/shop`)
+        .then(res => res.json())
+        .then(data => {
 
-
-
-document.getElementById("searchnumber").addEventListener("click", () => {
-    if (serachdata.value && serachdata.value.length === 10) {
-
-        fetch(`https://opensheet.elk.sh/${sh}/shop`) // सही URL और Quotes
-            .then(res => {
-                if (!res.ok) {
-                    throw new Error("Network response was not ok");
-                }
-                return res.json(); // फ़ंक्शन को () के साथ कॉल किया
-            })
-            .then(data => {
-                var newData = data.filter(u => u.number === serachdata.value)
-                userData = newData[0]
-
-                document.getElementById("namedata").innerHTML = ` Customer Name : ${userData.name} </br>`
-                document.getElementById("numberdata").innerHTML = `Customer Number : ${userData.number}`
-
-            })
-            .catch(error => {
-                console.error("डेटा फेच करने में एरर आई:", error);
+            const filterUserName = data.filter(item => {
+                var username2 = item.name.toLowerCase();
+                var usernumber2 = item.number
+                return username2.includes(e.target.value) || usernumber2.includes(e.target.value)
             });
 
-    } else {
-        alert("Please Enter Valid Number")
-    }
-})
 
-var billNumber = document.getElementById("billNumber");
-var enterAmount = document.getElementById("enterAmount");
+            if (filterUserName.length === 0) {
+                customerList.innerHTML = "this cutomer is not here"
+                return
+            }
 
-var dr = document.getElementById("dooo");
-var cr = document.getElementById("cooo");
+            if(!e.target.value){
+                customerList.innerHTML = ""
+                return
+            }
 
-document.getElementById("sendData").addEventListener("click", () => {
 
-    const data = [
-        billNumber.value,
-        enterAmount.value,
-        dr.value,
-        cr.value
-    ];
+            customerList.innerHTML = ''
+            filterUserName.forEach(k => {
+                var div = document.createElement('div')
+                div.className = "customerstylediv"
+                div.innerHTML = `${k.name.toUpperCase()} -  ${k.number}`
+                customerList.append(div);
 
-    fetch("YOUR_GOOGLE_SCRIPT_WEB_APP_URL", {
 
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ data : data })
-    })
-        .then(res => res.text())
-        .then(result => {
-            alert("Data Saved Successfully");
-            console.log(result);
+
+                div.addEventListener('click', () => {
+                    viewLeadger(`${k.leadger}`)
+                })
+
+
+            });
+
+
         })
-        .catch(err => {
-            console.log(err);
-            alert("Error Sending Data");
-        });
+        .catch(error => console.log(error));
 
 });
+
+
+
+
+
+function viewLeadger(a) {
+
+    fetch(`https://opensheet.elk.sh/${sh}/leadger`)
+        .then(res => res.json())
+        .then(data => {
+
+            ledagrValue.innerHTML = "";
+
+            data.forEach((row, index) => {
+
+                if (!row[a]) return;
+
+                const arr = JSON.parse(row[a]);
+
+                ledagrValue.innerHTML += `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${arr[1]}</td>
+                        <td>${arr[0]}</td>                        
+                        <td>${arr[2]}</td>
+                        <td>${arr[3]}</td>
+                        <td>${arr[4]}</td>
+                    </tr>
+                `;
+            });
+
+        })
+        .catch(err => console.log(err));
+
+}
