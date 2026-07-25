@@ -12,7 +12,7 @@
     --bg-main: #0f172a;
     --card-bg: rgba(30, 41, 59, 0.8);
     --border-color: #334155;
-    --text-primary: #f8fafc;
+    --text-primary: #fcfdff;
     --text-muted: #94a3b8;
     --accent: #6366f1;
     --accent-hover: #4f46e5;
@@ -36,8 +36,8 @@ body {
 
 /* --- Outer Glass Container --- */
 body > div {
-    width: 100%;
-    max-width: 950px;
+    /* width: 100%; */
+    /* max-width: 950px; */
     background: var(--card-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -105,6 +105,7 @@ tbody td {
     padding: 1.1rem 1.25rem;
     font-size: 0.95rem;
     color: var(--text-primary);
+    
 }
 
 /* Accent styling for Rewards column */
@@ -132,5 +133,6 @@ tbody td:last-child {
     tbody td, thead th {
         padding: 0.85rem 0.75rem;
         font-size: 0.85rem;
+        
     }
 }
