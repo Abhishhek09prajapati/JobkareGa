@@ -1,93 +1,136 @@
 /* --- Google Fonts Import --- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
-/* --- Reset & Base Styles --- */
+/* --- Core Reset & Variables --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+:root {
+    --bg-main: #0f172a;
+    --card-bg: rgba(30, 41, 59, 0.8);
+    --border-color: #334155;
+    --text-primary: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #6366f1;
+    --accent-hover: #4f46e5;
+    --accent-glow: rgba(99, 102, 241, 0.25);
+    --reward-gold: #f59e0b;
+}
+
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background-color: #1867df;
-    color: #333333;
-    line-height: 1.6;
-    padding: 2rem 1rem;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-main);
+    background-image: 
+        radial-gradient(at 20% 20%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+        radial-gradient(at 80% 80%, rgba(245, 158, 11, 0.1) 0px, transparent 50%);
+    color: var(--text-primary);
+    min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+/* --- Outer Glass Container --- */
+body > div {
     width: 100%;
+    max-width: 950px;
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* --- Container Card --- */
-div {
-    /* width: 100%; */
-   box-sizing: border-box;
-    background: #a09898;
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-
-}
-
-/* --- Subtitle / Text --- */
+/* --- Banner Header Text --- */
 p {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: #555555;
-    margin-bottom: 1.5rem;
+    font-size: 1.15rem;
+    font-weight: 600;
     text-align: center;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    padding: 1rem 1.5rem;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px dashed var(--accent);
+    border-radius: 12px;
 }
 
-/* --- Table Styling --- */
+/* --- Table Styles --- */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto; /* Handles overflow on small screens */
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
-    overflow: hidden;
-    border-radius: 8px;
-    background-color: #ffffff;
-}
-
-/* Header Cells */
-th {
-    background-color: #4f46e5; /* Modern Indigo color */
-    color: #ffffff;
-    font-weight: 600;
     text-align: left;
-    padding: 1rem;
-    font-size: 0.95rem;
+}
+
+/* Table Header */
+thead th, tr:first-child th {
+    background-color: #1e293b;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--border-color);
 }
 
-/* Data Cells */
-td {
-    padding: 1rem;
-    color: #4b5563;
-    border-bottom: 1px solid #e5e7eb;
-    font-size: 0.95rem;
-}
-
-/* Hover Effect on Rows */
+/* Table Body Rows */
 tbody tr {
-    transition: background-color 0.2s ease;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    /* width: 100%; */
 }
 
-tbody tr:hover {
-    background-color: #f9fafb;
-}
-
-/* Zebra Striping (Optional, for readability) */
-tbody tr:nth-child(even) {
-    background-color: #fcfcfd;
-}
-
-/* Remove bottom border on last row */
-tbody tr:last-child td {
+tbody tr:last-child {
     border-bottom: none;
 }
 
-/* --- Responsive Table Styling (Mobile-first fallback) --- */
+tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
 
+tbody td {
+    padding: 1.1rem 1.25rem;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+/* Accent styling for Rewards column */
+tbody td:last-child {
+    color: var(--reward-gold);
+    font-weight: 700;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    body > div {
+        padding: 1.5rem 1rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+        padding: 0.85rem;
+    }
+
+    /* Wrap table in scroll container on small screens */
+    .table-wrapper {
+        border-radius: 8px;
+    }
+
+    tbody td, thead th {
+        padding: 0.85rem 0.75rem;
+        font-size: 0.85rem;
+    }
+}
