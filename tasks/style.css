@@ -24,7 +24,7 @@ body {
 /* --- Container Card --- */
 div {
     /* width: 100%; */
-    /* max-width: 900px; */
+   box-sizing: border-box;
     background: #a09898;
     border-radius: 12px;
     padding: 2rem;
