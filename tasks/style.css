@@ -1,0 +1,91 @@
+/* --- Google Fonts Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* --- Reset & Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #f4f6f9;
+    color: #333333;
+    line-height: 1.6;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+/* --- Container Card --- */
+div {
+    width: 100%;
+    max-width: 900px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Subtitle / Text --- */
+p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #555555;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* --- Table Styling --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+/* Header Cells */
+th {
+    background-color: #4f46e5; /* Modern Indigo color */
+    color: #ffffff;
+    font-weight: 600;
+    text-align: left;
+    padding: 1rem;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Data Cells */
+td {
+    padding: 1rem;
+    color: #4b5563;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 0.95rem;
+}
+
+/* Hover Effect on Rows */
+tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+/* Zebra Striping (Optional, for readability) */
+tbody tr:nth-child(even) {
+    background-color: #fcfcfd;
+}
+
+/* Remove bottom border on last row */
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* --- Responsive Table Styling (Mobile-first fallback) --- */
+
