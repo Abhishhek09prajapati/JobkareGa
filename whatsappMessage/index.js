@@ -62,7 +62,7 @@ fetch(`https://opensheet.elk.sh/${sheet}/CustomerData`)
 
             div.querySelector(".ledgerBtn").addEventListener("click", (e) => {
                 document.getElementById("leadgeediv").style.display = ""
-                userfilter(u.leadger)
+               
             });
 
             document.getElementById("mobilediv").appendChild(div);
@@ -75,31 +75,4 @@ document.getElementById("closeBtn").addEventListener("click", (e) => {
     document.getElementById("leadgeediv").style.display = "none"
 })
 
-function userfilter(a) {
-    fetch(`https://opensheet.elk.sh/${sheet}/CustomerData`)
-        .then(res => res.json())
-        .then(data => {
-            const ledger = document.getElementById("leadager");
-            ledger.innerHTML = "";
-            data.forEach((u, i) => {
-                if (!u[a]) return;
-                const arr = JSON.parse(u[a]);
-                let bg = "";
-                if (arr[2] === "CR") {
-                    bg = "#04f73d";   // Light Green
-                } else if (arr[2] === "DR") {
-                    bg = "#f70b1e";   // Light Red
-                }
-                ledger.innerHTML += `
-                    <tr style="background:${bg}">
-                        <td>${i + 1}</td>
-                        <td>${arr[1]}</td>
-                        <td>${arr[0]}</td>
-                        <td>${arr[2]}</td>
-                        <td>${arr[3]}</td>
-                        <td>${arr[4]}</td>
-                    </tr>
-                `;
-            });
-        });
-}
+
