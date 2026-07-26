@@ -10,7 +10,7 @@ fetch(`https://opensheet.elk.sh/${sheet}/CustomerData`)
     .then(data => {
 
 
-        var userdata = data.filter(o => o.mobile === nub1)
+        var userdata = data.filter(o => o.referral === nub1)
 
         userdata.forEach(u => {
 
@@ -51,13 +51,13 @@ fetch(`https://opensheet.elk.sh/${sheet}/CustomerData`)
 
             div.querySelector(".whatsappBtn").addEventListener("click", (e) => {
                 e.stopPropagation();
-                window.open(`https://wa.me/91${u.number}`)
+                window.open(`https://wa.me/91${u.mobile}`)
             });
 
             div.querySelector(".callBtn1").addEventListener("click", (e) => {
                 e.stopPropagation();
                 // alert(`${u.number}`)
-                window.location.href = `tel:${u.number}`;
+                window.location.href = `tel:${u.mobile}`;
             });
 
             div.querySelector(".ledgerBtn").addEventListener("click", (e) => {
