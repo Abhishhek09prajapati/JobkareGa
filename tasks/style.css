@@ -15,7 +15,7 @@ body {
 
 .maindiv {
     width: 100%;
-    max-width: 600px; /* Responsive maximum width */
+    
     height: max-content;
     background-color: #1e293b; /* Sleek card background */
     border: 1px solid #334155;
