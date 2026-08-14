@@ -1,6 +1,12 @@
 var loading = document.getElementById("loading")
 loading.style.display = "none" ;
-var msg = "Ham ne Form Fill Kar Diya Hai , Please Provide Me Links and UserID and Password"
+var msg = "Ham ne Form Fill Kar Diya Hai , Please Provide Me Links and UserID and Password" ;
+
+var s = localStorage.getItem("userID")
+
+console.log(s)
+
+
 
 document.getElementById("contactForm").addEventListener("submit", async (e) => {
     e.preventDefault();
