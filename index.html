@@ -4,32 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MYCompany</title>
+
+    <title>JobKareGa - Login</title>
+
     <link rel="stylesheet" href="style.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6079426080698008"
-     crossorigin="anonymous"></script>
+
+    <!-- Google AdSense -->
+    <script async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6079426080698008"
+        crossorigin="anonymous">
+    </script>
+
+    <script src="index.js" defer></script>
 </head>
 
 <body>
+
     <div class="loginPage">
+
         <h2>JobKareGa (Login)</h2>
+
         <div>
-            <label>User ID</label>
-            <input id="UserID" type="text" placeholder="Enter User ID">
+            <label for="UserID">User ID</label>
+            <input
+                id="UserID"
+                type="text"
+                placeholder="Enter User ID"
+                autocomplete="username">
         </div>
+
         <div>
-            <label>Password</label>
-            <input id="passworddata" type="password" placeholder="Enter Password">
+            <label for="passworddata">Password</label>
+            <input
+                id="passworddata"
+                type="password"
+                placeholder="Enter Password"
+                autocomplete="current-password">
         </div>
-        <button onclick="loginpage()">Log In</button>
+
+        <button type="button" onclick="loginpage()">
+            Log In
+        </button>
+
         <span>
             User ID और Password के लिए Admin से संपर्क करें.
             <br><br>
-            <button id="admin">Contact Admin</button>
+
+            <button type="button" id="admin">
+                Contact Admin
+            </button>
         </span>
+
     </div>
-    <div id="loading" class="loading">Please wait ...</div>
+
+    <div id="loading" class="loading">
+        Please wait ...
+    </div>
+
 </body>
-<script src="index.js"></script>
 
 </html>

@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;     
+}
+
+/* Navbar */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ff9800;
+    color: white;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navLinks {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navLinks li {
+    cursor: pointer;
+}
+
+/* Menu button */
+
+.menuBtn {
+    font-size: 25px;
+    display: none;
+    cursor: pointer;
+}
+
+/* Sidebar */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #02f23a;
+    color: white;
+    padding-top: 30px;
+    transition: 0.3s;
+}
+
+.sidebar a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    background: #555;
+}
+
+.closeBtn {
+    font-size: 25px;
+    margin-left: 15px;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    color: red;
+    top: 5px;
+}
+
+/* Main */
+
+.main {
+    text-align: center;
+    padding: 50px;
+}
+.main1{
+    width: 100%;
+}
+#servcis1 {
+    /* background-color: red; */
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+}
+
+#servcis1 table {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+
+#servcis1 table tr th,
+td {
+    border: 1px solid black;
+}
+
+.whatsappimg {
+    width: 50px;
+    position: fixed;
+    bottom: 10px;
+    border-radius: 100%;
+    right: 0;
+}
+
+.servicsdata {
+    /* width: 35%; */
+    margin: 5px;
+    height: 300px;
+    border: 1px solid black;
+
+}
+
+.serrvicsimage {
+    width: 100%;
+    height: 85%;
+}
+
+.footer {
+    background-color: blue;
+    color: white;
+    display: block;
+    width: 100%;
+    padding: 10px 30px;
+    bottom: 0px;
+}
+
+.sildeimg {
+    width: 100%;
+    height: 250px;
+
+}
+
+@media (max-width: 600px) {
+
+    .footerBox {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footCol {
+        width: 100%;
+    }
+
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .navLinks {
+        display: none;
+    }
+
+    .menuBtn {
+        display: block;
+    }
+
+}

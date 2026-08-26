@@ -1,128 +1,142 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: "Segoe UI", sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    width:100%;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-}
-
-.loginPage{
-    width:420px;
-    padding:35px;
-    border-radius:20px;
-    background:rgba(255,255,255,0.12);
-    backdrop-filter:blur(15px);
-    box-shadow:0 10px 30px rgba(0,0,0,.35);
-    border:1px solid rgba(255,255,255,.2);
-}
-
-.loginPage h2{
-    text-align:center;
-    color:#fff;
-    margin-bottom:25px;
-    font-size:30px;
-}
-
-.loginPage div{
-    margin-bottom:18px;
-}
-
-.loginPage label{
-    display:block;
-    color:#fff;
-    margin-bottom:8px;
-    font-weight:600;
-    font-size:15px;
-}
-
-.loginPage input{
-    width:100%;
-    padding:13px 15px;
-    border:none;
-    outline:none;
-    border-radius:10px;
-    background:rgba(255,255,255,.15);
-    color:#fff;
-    font-size:15px;
-    transition:.3s;
-}
-
-.loginPage input::placeholder{
-    color:#ddd;
-}
-
-.loginPage input:focus{
-    /* background:#f8f8f8; */
-    color:#222;
-    box-shadow:0 0 12px #00d4ff;
-}
-
-.loginPage button{
-    width:100%;
-    padding:13px;
-    border:none;
-    border-radius:10px;
-    background:linear-gradient(90deg,#00c6ff,#0072ff);
-    color:#fff;
-    font-size:17px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:.3s;
-    margin-top:8px;
-}
-
-.loginPage button:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 20px rgba(0,114,255,.4);
-}
-
-.loginPage span{
-    display:block;
-    margin-top:18px;
-    text-align:center;
-    color:#fff;
-    font-size:14px;
-    line-height:22px;
-}
-
-.loginPage span button{
-    width:auto;
-    margin-top:12px;
-    padding:8px 18px;
-    background:#ff9800;
-    font-size:14px;
-}
-
-.loginPage span button:hover{
-    background:#ff6f00;
-    box-shadow:none;
-}
-
-.loading{
-    width: 200px;
-    height: max-content;
-    padding: 20px 50px;
-    position: absolute;
-    background-color: white;
-    border-radius: 2px;
+body {
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
 }
 
-@media(max-width:450px){
-
-.loginPage{
-    width:90%;
-    padding:25px;
+/* Login Box */
+.loginPage {
+    width: 380px;
+    padding: 35px 30px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
+/* Heading */
+.loginPage h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #222;
+    font-size: 26px;
+}
+
+/* Input Container */
+.loginPage > div {
+    margin-bottom: 20px;
+}
+
+/* Labels */
+.loginPage label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Inputs */
+.loginPage input {
+    width: 100%;
+    height: 45px;
+    padding: 0 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.loginPage input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.12);
+}
+
+/* Login Button */
+.loginPage > button {
+    width: 100%;
+    height: 45px;
+    border: none;
+    border-radius: 8px;
+    background: #667eea;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.loginPage > button:hover {
+    background: #5568d9;
+    transform: translateY(-1px);
+}
+
+/* Admin Text */
+.loginPage span {
+    display: block;
+    margin-top: 25px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #666;
+}
+
+/* Contact Admin Button */
+#admin {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #667eea;
+    border-radius: 8px;
+    background: white;
+    color: #667eea;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#admin:hover {
+    background: #667eea;
+    color: white;
+}
+
+/* Loading */
+.loading {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.9);
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #667eea;
+    z-index: 9999;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .loginPage {
+        width: 100%;
+        max-width: 380px;
+        padding: 30px 22px;
+    }
+
+    .loginPage h2 {
+        font-size: 23px;
+    }
 }
