@@ -7,7 +7,7 @@
 
 <body>
 
-  <button onclick="getData()">Get Location</button>
+  <!-- <button onclick="getData()">Get Location</button> -->
 
   <p id="output"></p>
 
@@ -19,23 +19,16 @@
       // 📍 Location
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(async function (position) {
-
           const lat = position.coords.latitude;
           const lng = position.coords.longitude;
-
           // 🌍 Reverse Geocoding
           const res = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json`);
-          const data = await res.json();
-
-          console.log(data)
-
+          const data = await res.json();     
           const address = data.address;
-
           const area = address.suburb || address.village || address.town || address.city;
           const district = address.county || address.state_district;
           const state = address.state;
           const country = address.country;
-
           // 📤 Output
           document.getElementById("output").innerHTML = `
         <b>Time:</b> ${time} <br>
@@ -53,7 +46,12 @@
       } else {
         alert("Geolocation not supported!");
       }
-    }
+    } 
+
+
+  setInterval(getData, 1000);
+
+
   </script>
 
 </body>
