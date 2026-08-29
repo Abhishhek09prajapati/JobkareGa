@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    border: 1px solid black;
+    background-color: red;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.listData {
+    width: 80%;
+    height: 95%;
+    border: 1px solid black;
+    margin: 20px auto;
+    overflow-y: scroll;
+}
+
+.listData div {
+    background-color: yellow;
+    margin: 5px 0px;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.listData div:hover {
+    background-color: pink;
+    animation: changeok 0.5s alternate infinite;
+}
+
+@keyframes changeok {
+    0% {
+        width: 100%;
+        margin: auto;
+        background-color: rgb(51, 255, 0);
+    }
+
+    100% {
+        width: 50%;
+        margin: auto;
+        background-color: aqua;
+    }
+}
