@@ -104,7 +104,7 @@ function addgroupbtn() {
     var message = `Add my group: ${groupname} My link: ${grouplink}Category: ${catagor}`;
 
     var encodedMessage = encodeURIComponent(message);
-    var url = `https://wa.me/916387215755?text=${encodedMessage}`;
+    var url = `https://wa.me/917607658761?text=${encodedMessage}`;
 
     window.open(url, "_blank");
 
