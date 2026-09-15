@@ -3,8 +3,8 @@ var whatsapp = document.getElementById("whatsapp")
 var contact = document.getElementById("contact")
 let dataView = document.getElementsByClassName("dataView")[0]
 
-leads.style.display = "none"
-whatsapp.style.display = "block"
+leads.style.display = "block"
+whatsapp.style.display = "none"
 contact.style.display = "none"
 
 
