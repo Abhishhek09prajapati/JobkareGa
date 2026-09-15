@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+.mainContainer {
+    background-color: red;
+    width: 100%;
+    height: 100vh;
+    border: 1px solid black;
+    transition: 3s;
+}
+
+.mainContainer:hover {
+    background-color: black;
+}
+
+.firstDiv {
+    margin: auto;
+    border: 1px solid black;
+    background-color: white;
+    width: 500px;
+    height: 500px;
+}
+
+.h {
+    background-color: green;
+    width: 100%;
+    height: 50px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    position: relative;
+
+}
+
+.h label {
+    background-color: white;
+    padding: 8px 5px;
+    border-radius: 5px;
+    height: fit-content;
+
+}
+
+.h label:nth-child(1) {
+    /* background-color: red; */
+    box-shadow: 2px 2px 2px rgb(20, 20, 0);
+}
+
+.h label:nth-child(2) {
+    box-shadow: 2px 2px 2px rgb(16, 0, 20);
+    /* background-color: red; */
+}
+
+.h label:nth-child(3) {
+    box-shadow: 2px 2px 2px rgb(20, 20, 0);
+    /* background-color: red; */
+}
+
+.leads {
+    width: 100%;
+    background-color: rgb(234, 0, 255);
+    height: calc(100% - 50px);
+}
+
+.whatsapp {
+    width: 100%;
+    background-color: rgb(194, 247, 4);
+    height: calc(100vh - 50px);
+    overflow-y: scroll;
+}
+
+.contact {
+    width: 100%;
+    background-color: rgb(38, 0, 255);
+    height: calc(100% - 50px);
+
+}
+
+.h label:hover {
+    background-color: yellow;
+}
+
+.h label:active {
+    background-color: rgb(49, 2, 2);
+    color: white;
+}
+
+.btnlead {
+    padding: 5px 10px;
+    border-radius: 5px;
+
+}
+
+.btnlead:active {
+    background-color: brown;
+    box-shadow: 2px 3px 10px black;
+    color: white;
+}
+
+.leadform {
+    width: 100%;
+    background-color: yellow;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.inputdata {
+    border-radius: 3px;
+    height: 30px;
+    padding: 3px 10px;
+}
+
+.inputdata:focus {
+    color: rgb(102, 3, 3);
+}
+
+.whastapplabel {
+    width: 100%;
+    margin: 8px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.status {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: red;
+    margin-left: 10px;
+}
