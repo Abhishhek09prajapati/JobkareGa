@@ -73,7 +73,6 @@ btnlead.addEventListener("click", () => {
 })
 
 var shq = "13TdMAat7ZtnqFwG1M2nklNCMcYvJXzfuUsEuGRroCII"
-
 fetch(`https://opensheet.elk.sh/${shq}/abhishek`)
     .then(res => res.json())
     .then(data => {
@@ -121,7 +120,7 @@ fetch(`https://opensheet.elk.sh/${shq}/abhishek`)
                     });
             });
 
-        });
+        })
     }).catch(err => {
         console.log(err)
     })
