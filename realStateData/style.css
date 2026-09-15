@@ -8,10 +8,10 @@
   --card-border: #334155;      /* Subtle border contrast */
   --primary: #2563eb;          /* Brand blue action color */
   --primary-hover: #1d4ed8;
-  --accent-green: #10b981;     /* Lead action / status indicator */
+  --accent-green: #087752;     /* Lead action / status indicator */
   --text-main: #f8fafc;        /* High-contrast white text */
   --text-muted: #94a3b8;       /* Subtle secondary text */
-  --input-bg: #0f172a;         /* Dark form field fill */
+  --input-bg: #020d29;         /* Dark form field fill */
   --radius: 10px;              /* Consistent rounded edges */
 }
 

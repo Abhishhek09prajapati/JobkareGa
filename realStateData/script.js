@@ -73,10 +73,11 @@ btnlead.addEventListener("click", () => {
 })
 
 var shq = "13TdMAat7ZtnqFwG1M2nklNCMcYvJXzfuUsEuGRroCII"
+
 fetch(`https://opensheet.elk.sh/${shq}/abhishek`)
     .then(res => res.json())
     .then(data => {
-        data.forEach(t => {
+        data.forEach(t => {            
             var div = document.createElement('div')
 
             div.innerHTML = `<label for="">${t.name}</label>
@@ -88,25 +89,19 @@ fetch(`https://opensheet.elk.sh/${shq}/abhishek`)
             } else {
                 statusx.style.backgroundColor = "red"
             }
-
             whatsapp.append(div)
-
             div.addEventListener("click", () => {
-
                 const message = "Hello, Good Morning Dear";
-
                 const f = {
                     number: String(t.mobile),
                     status: "red"
                 };
-
                 // WhatsApp immediately open
                 const whatsappUrl =
                     `https://wa.me/91${t.mobile}?text=${encodeURIComponent(message)}`;
 
                 window.open(whatsappUrl, "_blank");
-
-                var statusdata  = "https://script.google.com/macros/s/AKfycbwAGAhigqtYghtMhzCp6m9LnE7HZvV9d0SGnMM_OkvSNl-bEEl3IE5u3KVqQpXf-xcL5Q/exec"
+                var statusdata = "https://script.google.com/macros/s/AKfycbwAGAhigqtYghtMhzCp6m9LnE7HZvV9d0SGnMM_OkvSNl-bEEl3IE5u3KVqQpXf-xcL5Q/exec"
                 // Google Sheet update
                 fetch(statusdata, {
                     method: "POST",
@@ -124,7 +119,6 @@ fetch(`https://opensheet.elk.sh/${shq}/abhishek`)
                     .catch(err => {
                         console.log("Error:", err);
                     });
-
             });
 
         });
