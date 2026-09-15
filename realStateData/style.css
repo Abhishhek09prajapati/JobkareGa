@@ -205,6 +205,7 @@ body {
   box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
 }
 
+
 /* Responsive Fixes */
 @media (max-width: 520px) {
   body {

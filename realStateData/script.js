@@ -14,9 +14,7 @@ var contactbtn = document.getElementById("contactbtn")
 
 
 contactbtn.addEventListener("click", () => {
-    leads.style.display = "none"
-    whatsapp.style.display = "none"
-    contact.style.display = "block"
+    window.open("https://wa.me/917607658761")
 })
 leadbtn.addEventListener("click", () => {
     leads.style.display = "block"
@@ -45,7 +43,6 @@ btnlead.addEventListener("click", () => {
 
     if (n && m && m.length === 10) {
         const datavalue = { n, m }
-
         fetch(sh, {
             method: "POST",
             mode: "no-cors",
@@ -70,7 +67,6 @@ btnlead.addEventListener("click", () => {
     } else {
         alert("Please Enter Valid Number")
     }
-
 })
 
 function noy() {
@@ -81,8 +77,7 @@ function noy() {
         .then(data => {
             data.forEach(t => {
                 var div = document.createElement('div')
-                div.innerHTML = `<label for="">${t.name}</label>
-        <label class="status" ></label>`
+                div.innerHTML = `<label for="">${t.name}</label> <label class="status" ></label>`
                 div.className = "whastapplabel";
                 var statusx = div.querySelector(".status");
                 if (t.status === "green") {
@@ -111,7 +106,6 @@ function noy() {
                         headers: {
                             "Content-Type": "text/plain;charset=utf-8"
                         },
-
                         body: JSON.stringify(f)
                     })
                         .then(() => {
@@ -127,4 +121,3 @@ function noy() {
             console.log(err)
         })
 }
-
