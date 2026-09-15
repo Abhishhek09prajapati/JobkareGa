@@ -24,6 +24,7 @@ leadbtn.addEventListener("click", () => {
     contact.style.display = "none"
 })
 whatsappbtn.addEventListener("click", () => {
+    noy()
     leads.style.display = "none"
     whatsapp.style.display = "block"
     contact.style.display = "none"
@@ -72,56 +73,58 @@ btnlead.addEventListener("click", () => {
 
 })
 
-var shq = "13TdMAat7ZtnqFwG1M2nklNCMcYvJXzfuUsEuGRroCII"
-fetch(`https://opensheet.elk.sh/${shq}/abhishek`)
-    .then(res => res.json())
-    .then(data => {
-        data.forEach(t => {            
-            var div = document.createElement('div')
-
-            div.innerHTML = `<label for="">${t.name}</label>
+function noy() {
+    whatsapp.innerHTML = ""
+    var shq = "13TdMAat7ZtnqFwG1M2nklNCMcYvJXzfuUsEuGRroCII"
+    fetch(`https://opensheet.elk.sh/${shq}/abhishek`)
+        .then(res => res.json())
+        .then(data => {
+            data.forEach(t => {
+                var div = document.createElement('div')
+                div.innerHTML = `<label for="">${t.name}</label>
         <label class="status" ></label>`
-            div.className = "whastapplabel";
-            var statusx = div.querySelector(".status");
-            if (t.status === "green") {
-                statusx.style.backgroundColor = "green"
-            } else {
-                statusx.style.backgroundColor = "red"
-            }
-            whatsapp.append(div)
-            div.addEventListener("click", () => {
-                const message = "Hello, Good Morning Dear";
-                const f = {
-                    number: String(t.mobile),
-                    status: "red"
-                };
-                // WhatsApp immediately open
-                const whatsappUrl =
-                    `https://wa.me/91${t.mobile}?text=${encodeURIComponent(message)}`;
+                div.className = "whastapplabel";
+                var statusx = div.querySelector(".status");
+                if (t.status === "green") {
+                    statusx.style.backgroundColor = "green"
+                } else {
+                    statusx.style.backgroundColor = "red"
+                }
+                whatsapp.append(div)
+                div.addEventListener("click", () => {
+                    const message = "Hello, Good Morning Dear";
+                    const f = {
+                        number: String(t.mobile),
+                        status: "red"
+                    };
+                    // WhatsApp immediately open
+                    const whatsappUrl =
+                        `https://wa.me/91${t.mobile}?text=${encodeURIComponent(message)}`;
 
-                window.open(whatsappUrl, "_blank");
-                var statusdata = "https://script.google.com/macros/s/AKfycbwAGAhigqtYghtMhzCp6m9LnE7HZvV9d0SGnMM_OkvSNl-bEEl3IE5u3KVqQpXf-xcL5Q/exec"
-                // Google Sheet update
-                fetch(statusdata, {
-                    method: "POST",
-                    mode: "no-cors",
+                    window.open(whatsappUrl, "_blank");
+                    var statusdata = "https://script.google.com/macros/s/AKfycbwAGAhigqtYghtMhzCp6m9LnE7HZvV9d0SGnMM_OkvSNl-bEEl3IE5u3KVqQpXf-xcL5Q/exec"
+                    // Google Sheet update
+                    fetch(statusdata, {
+                        method: "POST",
+                        mode: "no-cors",
 
-                    headers: {
-                        "Content-Type": "text/plain;charset=utf-8"
-                    },
+                        headers: {
+                            "Content-Type": "text/plain;charset=utf-8"
+                        },
 
-                    body: JSON.stringify(f)
-                })
-                    .then(() => {
-                        console.log("Status update request sent");
+                        body: JSON.stringify(f)
                     })
-                    .catch(err => {
-                        console.log("Error:", err);
-                    });
-            });
+                        .then(() => {
+                            console.log("Status update request sent");
+                        })
+                        .catch(err => {
+                            console.log("Error:", err);
+                        });
+                });
 
+            })
+        }).catch(err => {
+            console.log(err)
         })
-    }).catch(err => {
-        console.log(err)
-    })
+}
 
