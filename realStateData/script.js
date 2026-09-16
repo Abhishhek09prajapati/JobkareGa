@@ -80,7 +80,7 @@ function noy() {
                 div.innerHTML = `<label for="">${t.name}</label> <label class="status" ></label>`
                 div.className = "whastapplabel";
                 var statusx = div.querySelector(".status");
-                if (t.status === "green") {
+                if (t.status === "Green") {
                     statusx.style.backgroundColor = "green"
                 } else {
                     statusx.style.backgroundColor = "red"
