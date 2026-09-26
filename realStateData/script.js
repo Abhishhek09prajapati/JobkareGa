@@ -102,7 +102,6 @@ function noy() {
                     fetch(statusdata, {
                         method: "POST",
                         mode: "no-cors",
-
                         headers: {
                             "Content-Type": "text/plain;charset=utf-8"
                         },
@@ -115,7 +114,6 @@ function noy() {
                             console.log("Error:", err);
                         });
                 });
-
             })
         }).catch(err => {
             console.log(err)
