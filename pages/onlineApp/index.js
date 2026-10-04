@@ -41,7 +41,7 @@ document.getElementById("accountbtn").addEventListener('click', () => {
     if (activeRowData && activeRowData.Links) {
 
         if (activeRowData.CompanyName === "Iconstar Business") {
-            window.open(`https://wa.me/91638721755?text=${activeRowData.advanceLinks}`, "_blank");
+            window.open(`https://wa.me/917607658761?text=${activeRowData.advanceLinks}`, "_blank");
         } else {
             window.open(activeRowData.Links, "_blank");
         }
