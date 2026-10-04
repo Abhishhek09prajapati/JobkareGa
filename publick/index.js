@@ -2,6 +2,10 @@
 const sidebar = document.getElementById("sildebaar");
 const userid = localStorage.getItem("userID");
 
+var image5 = document.getElementById("userimage5"); 
+
+
+  
 sidebar.style.width = "0";
 
 document.getElementById("menubtn").addEventListener("click", () => {
@@ -27,6 +31,7 @@ let sheetWallet = null;
 
 // 3. Main Data Orchestrator (Ensures sequential execution)
 async function loadDashboardData() {
+    
     try {
         // Step A: Load User Profile
         const userRes = await fetch(`https://opensheet.elk.sh/${sheet}/${sheetTable[0]}`);
@@ -37,6 +42,9 @@ async function loadDashboardData() {
             console.error("User session invalid or user not found.");
             return;
         }
+
+        
+        
 
         sheetWallet = finduser.wallet;
         userdatavalue(finduser);
@@ -64,6 +72,7 @@ function userdatavalue(a) {
     document.getElementById("un").innerHTML = `Name : <strong>${a.name}</strong>`;
     document.getElementById("upost").innerHTML = `Post : <strong>${a.post}</strong>`;
     document.getElementById("useraddress").innerHTML = `Address : <strong>${a.address}</strong>`;
+    image5.src = `../images/${a.images}`;
 }
 
 // 5. Render Point Metrics
