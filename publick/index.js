@@ -41,10 +41,7 @@ async function loadDashboardData() {
         if (!finduser) {
             console.error("User session invalid or user not found.");
             return;
-        }
-
-        
-        
+        }           
 
         sheetWallet = finduser.wallet;
         userdatavalue(finduser);
@@ -91,9 +88,7 @@ async function loadUserHistory() {
     try {
         const response = await fetch(`https://opensheet.elk.sh/${sheet}/${sheetTable[2]}`);
         const data = await response.json();
-
         let userHistory = [];
-
         for (let i = 0; i < data.length; i++) {
             let rawData = data[i][sheetWallet];            
             // Check if cell is occupied and not empty
