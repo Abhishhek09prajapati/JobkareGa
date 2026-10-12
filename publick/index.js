@@ -1,3 +1,6 @@
+import sheet from "/share.js";
+
+
 // 1. Sidebar Control
 const sidebar = document.getElementById("sildebaar");
 const userid = localStorage.getItem("userID");
@@ -25,7 +28,7 @@ menuLinks.forEach(link => {
 });
 
 // 2. Constants & State Variables
-const sheet = "1R6L4Nk6zaliaBbdfvvJJIEpMIw9XQKoEJhFL8fc1YEM";
+
 const sheetTable = ["singup", "wallets", "historyUser"];
 let sheetWallet = null;
 
