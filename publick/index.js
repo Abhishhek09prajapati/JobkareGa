@@ -1,4 +1,4 @@
-import sheet from "/share.js";
+import sheet  from "/share.js";
 
 
 // 1. Sidebar Control
